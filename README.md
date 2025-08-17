@@ -1,79 +1,113 @@
-# 📝 Python Quiz Game
+# 🧠 True/False Quiz Game  
 
-A simple **True/False Quiz Game** built in Python.  
-This is a beginner project that asks the user multiple questions, validates input, and keeps track of the score.  
+A simple Python-based interactive **True/False Quiz Game** built using **OOP principles**.  
+The quiz pulls questions from multiple categories like **Science, History, Geography, Sports, and General Knowledge**.  
 
 ---
 
-## 🚀 How to Run
+## 🚀 Features  
+- Multiple categories of questions  
+- Case-insensitive answer checking (`True` or `False`)  
+- Score tracking after every question  
+- User-friendly error handling (only accepts `True` or `False`)  
+- Final score summary after completion  
 
-1. Clone the repo:
+---
+
+## 📂 Project Structure  
+```
+📦 quiz-game
+ ┣ 📜 main.py          # Entry point for the quiz  
+ ┣ 📜 quiz_brain.py    # Quiz logic (engine)  
+ ┣ 📜 question_model.py# Question class  
+ ┣ 📜 data.py          # Contains the questions dataset  
+ ┗ 📜 README.md        # Documentation  
+```
+
+---
+
+## ▶️ How to Run  
+1. Clone this repo:  
    ```bash
-   git clone https://github.com/<your-username>/quiz-game.git
+   git clone https://github.com/your-username/quiz-game.git
    cd quiz-game
-   ```
+   ```  
 
-2. Run the game:
+2. Run the game:  
    ```bash
    python main.py
-   ```
+   ```  
 
 ---
 
-## 📂 Project Structure
+## 🎮 Example Gameplay  
 
 ```
-quiz-game/
-├── data.py             # Question data (list of dictionaries)
-├── main.py             # Entry point of the program
-├── question_model.py   # Defines the Question class
-├── quiz_brain.py       # QuizBrain class: logic of the quiz
-└── README.md           # Documentation
-```
-
----
-
-## ✨ Features
-- Input validation (`True`/`False` only, case-insensitive)
-- Keeps track of score
-- Final summary at the end of the quiz
-
----
-
-## 🖥️ Example Run
-
-```
-Q.1: A slug's blood is green. (True/False): True
+Q.1: The chemical symbol for gold is 'Au'. (True/False): true
 ✅ You got it right!
-The correct answer was: True
-Your current score is: 1/1
+The correct answer was True
+The current score is 1/1
 
-Q.2: The loudest animal is the African Elephant. (True/False): false
+Q.2: The Great Wall of China is visible from the Moon. (True/False): false
 ✅ You got it right!
-The correct answer was: False
-Your current score is: 2/2
+The correct answer was False
+The current score is 2/2
 
-Q.3: Approximately one quarter of human bones are in the feet. (True/False): maybe
-⚠️ Kindly type only 'True' or 'False'.
-Q.3: Approximately one quarter of human bones are in the feet. (True/False): True
+Q.3: Cricket originated in India. (True/False): false
 ✅ You got it right!
-The correct answer was: True
-Your current score is: 3/3
+The correct answer was False
+The current score is 3/3
 
-🥳 You've completed the quiz!
-Your final score is 3/3
+Q.4: The Earth revolves around the Sun. (True/False): true
+✅ You got it right!
+The correct answer was True
+The current score is 4/4
 ```
 
 ---
 
-## 📌 Future Improvements
-- Randomize question order
-- Load questions from an external JSON or API
-- Add a GUI version using Tkinter or PyQt
-- Add multiple-choice questions
+## 📊 Categories Covered  
+- 🌍 Geography  
+- 🔬 Science  
+- 📜 History  
+- 🏏 Sports  
+- 🧠 General Knowledge  
 
 ---
 
-## 🙌 Acknowledgements
-This project was created as a practice exercise while learning Python.  
-Inspired by beginner-friendly coding exercises and quiz apps.
+## 📝 How to Add More Questions  
+You can easily add new questions to the quiz by editing **`data.py`**.  
+
+Each question follows this format:  
+
+```python
+{
+    "category": "Science",
+    "question": "Water boils at 100°C at sea level.",
+    "correct_answer": "True"
+}
+```
+
+### Steps:  
+1. Open **`data.py`**  
+2. Find the `question_data` list  
+3. Add your new question dictionary to the list  
+4. Make sure the `correct_answer` is either `"True"` or `"False"` (case-sensitive)  
+
+Example of adding a new question:  
+
+```python
+question_data.append({
+    "category": "Geography",
+    "question": "Mount Kilimanjaro is located in Kenya.",
+    "correct_answer": "False"
+})
+```
+
+Now when you run `main.py`, the new question will appear in the quiz 🚀  
+
+---
+
+## 🏆 Final Note  
+This is a beginner-friendly but challenging project to practice **Python OOP, input handling, and modular code structure**.  
+Perfect for portfolio or resume projects 🚀  
