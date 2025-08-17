@@ -12,19 +12,19 @@ class QuizBrain:
         current_question = self.question_list[self.question_number]
         self.question_number += 1
 
-        while True:
-            user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False): ").strip().lower()
-            if user_answer in ["true", "false"]:
-                break
-            print("⚠️ Kindly type only 'True' or 'False'.")
+        user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False): ").strip().capitalize()
+
+        if user_answer not in ["True", "False"]:
+            print("⚠️ Please answer with 'True' or 'False' only.\n")
+            self.question_number -= 1  
+            return self.next_question()
 
         self.check_answer(user_answer, current_question.answer)
 
     def check_answer(self, user_answer, correct_answer):
-        if user_answer.lower() == correct_answer.lower():
-            print("✅ You got it right!")
+        if user_answer == correct_answer:
             self.score += 1
+            print("✅ Correct!")
         else:
-            print("❌ That's wrong.")
-        print(f"The correct answer was: {correct_answer}")
+            print("❌ Wrong.")
         print(f"Your current score is: {self.score}/{self.question_number}\n")
